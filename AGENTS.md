@@ -31,7 +31,9 @@ Todo agente o modelo que opere en este repositorio **DEBE CUMPLIR ESTRICTAMENTE*
   ├── 03_cfdi_schema.md         # Estructura del Anexo 20 CFDI 4.0 (Nodos, Retenciones)
   ├── 04_data_dictionary.md     # Mapeo XML -> DataFrame -> Excel Papel de Trabajo
   ├── 05_changelog_insights.md  # Registro técnico y aprendizajes acumulados
-  └── 06_workflow_mensual_sat.md# Protocolo de descargas SAT, carpetas por mes y folios
+  ├── 06_workflow_mensual_sat.md# Protocolo de descargas SAT, carpetas por mes y folios
+  ├── 07_sat_portal_filing_guide.md # Guía práctica universal paso a paso en el portal SAT
+  └── 08_tax_balance_tracker_2026.md # Control de saldos acumulados y arrastre mensual
   ```
 - **Ciclo de Vida de Tareas (Protocolo de 3 Fases):**
   1. **FASE 1: LECTURA PREVIA (Read-First):** Consultar obligatoriamente los documentos pertinentes de `wiki/` antes de generar propuestas o código.
