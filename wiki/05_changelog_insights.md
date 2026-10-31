@@ -118,3 +118,12 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
     - Generación de `web/public/sitemap.xml` para indexación de la URL canónica.
   - **Documentación en LLM Wiki:**
     - Creación del módulo temático independiente `wiki/09_telemetry_and_indexing.md` y actualización del índice general `wiki/00_index.md`.
+
+### [2026-10-31] — Implementación Global de Conexión Persistente Única CDP en Antigravity IDE
+- **Problema Abordado:**
+  - En Chrome 128+, el cuadro de seguridad nativo *"¿Deseas permitir la depuración remota?"* se dispara en cada nuevo apretón de manos (*handshake*) de WebSocket.
+  - La apertura recurrente de sockets efímeros mediante scripts ad-hoc obligaba al usuario a hacer clic en "Permitir" hasta 8 o 9 veces por sesión.
+- **Solución Implementada (Opción A):**
+  - **Puente Centralizado de Sesión:** Creación de `C:\Users\lenin\.gemini\config\chrome_devtools_bridge.mjs` que resuelve dinámicamente el puerto y el GUID activo desde `DevToolsActivePort`.
+  - **Configuración Global MCP:** Actualización de `mcp_config.json` para ejecutar el puente dinámico persistente, garantizando que Chrome pida autorización una sola vez al inicio de la sesión.
+  - **Regla Global de Antigravity IDE:** Establecimiento de la directiva mandatoria `browser_cdp_persistent_bridge.md` en `C:\Users\lenin\.gemini\config\rules\` que prohíbe terminantemente la creación de conexiones efímeras en cualquier proyecto donde se interactúe con el navegador.

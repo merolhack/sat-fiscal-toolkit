@@ -114,3 +114,4 @@ En el pie de página (`web/src/app/page.tsx`), se implementaron accesos y recono
 - **El Autor:** `https://merolhack.github.io/` (Lenin Meza)
 - **El Proyecto Principal:** `https://freelancemexico.com.mx/` (FreelanceMexico)
 - **Repositorio Oficial:** `https://github.com/merolhack/sat-fiscal-toolkit`
+
