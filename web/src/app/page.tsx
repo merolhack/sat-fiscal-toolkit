@@ -18,7 +18,9 @@ import {
   RotateCcw,
   Sparkles,
   Info,
-  ExternalLink
+  ExternalLink,
+  Globe,
+  Building2
 } from 'lucide-react';
 import { CFDIInvoice, MonthlyTaxSummary } from '../lib/types';
 import { extractCFDIsFromZip, parseMultipleXMLFiles } from '../lib/zipExtractor';
@@ -883,6 +885,66 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* Footer con Enlaces al Autor y Proyecto Principal */}
+      <footer className="mt-20 border-t border-slate-200 bg-white py-10 text-slate-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-between">
+            <div>
+              <div className="flex items-center space-x-2 text-slate-900 font-bold text-base mb-1">
+                <Calculator className="h-5 w-5 text-blue-600" />
+                <span>SAT Fiscal Toolkit</span>
+              </div>
+              <p className="text-xs text-slate-500 max-w-md">
+                Herramienta libre y de código abierto para personas físicas con actividad empresarial y servicios profesionales. Cálculo automático de ISR provisional (Art. 106 LISR) e IVA conforme a las reglas fiscales 2026.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 text-xs">
+              <a
+                href="https://merolhack.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 p-3 rounded-xl border border-slate-200 hover:border-blue-400 hover:bg-blue-50/40 transition-all text-slate-700 hover:text-blue-700 shadow-sm"
+              >
+                <div className="bg-blue-50 p-2 rounded-lg text-blue-600">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="block text-[10px] text-slate-400 uppercase font-bold tracking-wider">El Autor</span>
+                  <span className="flex items-center font-bold text-slate-900 text-xs">
+                    merolhack.github.io
+                    <ExternalLink className="h-3 w-3 ml-1 text-slate-400" />
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="https://freelancemexico.com.mx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 p-3 rounded-xl border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50/40 transition-all text-slate-700 hover:text-emerald-700 shadow-sm"
+              >
+                <div className="bg-emerald-50 p-2 rounded-lg text-emerald-600">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="block text-[10px] text-emerald-600 uppercase font-bold tracking-wider">Proyecto Principal</span>
+                  <span className="flex items-center font-bold text-slate-900 text-xs">
+                    freelancemexico.com.mx
+                    <ExternalLink className="h-3 w-3 ml-1 text-slate-400" />
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
+            <p>© {year} SAT Fiscal Toolkit • Desarrollado por Lenin Meza (merolhack).</p>
+            <p>Flujo de Efectivo LISR Art. 106 & LIVA Art. 1-B • CFDI 4.0</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

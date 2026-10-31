@@ -95,3 +95,8 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
     - **URL Oficial en Producción:** `https://merolhack.github.io/sat-fiscal-toolkit/`.
   - **Validación:** Compilación estática (`npm run build`) completada con éxito generando el directorio `web/out/`.
   - **Instrucciones SAT Integradas en UI:** Se agregaron desplegables interactivos en las tarjetas de carga con las rutas exactas paso a paso para descargar facturas Emitidas y Recibidas desde el portal del SAT.
+  - **Integración de Telemetría (GA4) y Verificación Search Console:**
+    - Se integró Google Analytics 4 (`G-8STYZ8GZRJ`) en `web/src/app/layout.tsx` con carga diferida `afterInteractive` y anonimización de IP.
+    - Se incorporó la verificación de Google Search Console vía meta-tag y archivo estático `web/public/google7d4ec8c5344a17de.html`.
+    - Se añadió pie de página oficial con enlaces a `https://merolhack.github.io/` (El Autor) y `https://freelancemexico.com.mx/` (Proyecto Principal).
+    - Suite BDD ampliada a 7 escenarios con cobertura para los enlaces del footer.

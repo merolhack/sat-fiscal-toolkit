@@ -17,7 +17,7 @@ describe('Feature: Declaración y Auditoría Fiscal Client-Side (User Journey BD
       render(<Home />);
 
       // Given & Then: Encabezado y sello de privacidad
-      expect(screen.getByText('SAT Fiscal Toolkit')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'SAT Fiscal Toolkit' })).toBeInTheDocument();
       expect(screen.getByText(/100% Client-Side/i)).toBeInTheDocument();
 
       // Then: KPIs presentes
@@ -115,6 +115,23 @@ describe('Feature: Declaración y Auditoría Fiscal Client-Side (User Journey BD
 
       expect(excelBtn).toBeInTheDocument();
       expect(mdBtn).toBeInTheDocument();
+    });
+  });
+
+  describe('Escenario 6: Enlaces de Pie de Página hacia el Autor y Proyecto Principal', () => {
+    it('Given que el usuario navega hasta abajo del sitio, Then se muestran los enlaces verificados hacia merolhack.github.io y freelancemexico.com.mx', () => {
+      render(<Home />);
+
+      const authorLink = screen.getByRole('link', { name: /merolhack\.github\.io/i });
+      const projectLink = screen.getByRole('link', { name: /freelancemexico\.com\.mx/i });
+
+      expect(authorLink).toBeInTheDocument();
+      expect(authorLink).toHaveAttribute('href', 'https://merolhack.github.io/');
+      expect(authorLink).toHaveAttribute('target', '_blank');
+
+      expect(projectLink).toBeInTheDocument();
+      expect(projectLink).toHaveAttribute('href', 'https://freelancemexico.com.mx/');
+      expect(projectLink).toHaveAttribute('target', '_blank');
     });
   });
 });
