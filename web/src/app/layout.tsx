@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: 'Herramienta client-side de auditoría contable y determinación provisional de ISR e IVA para personas físicas en México (CFDI 4.0 / Flujo de Efectivo / Art. 106 LISR).',
   verification: {
     google: 'google7d4ec8c5344a17de',
+    other: {
+      'msvalidate.01': ['856757614FFC2C5582FBCB81B1B4E4CA'],
+    },
   },
   authors: [{ name: 'Lenin Meza', url: 'https://merolhack.github.io/' }],
   creator: 'Lenin Meza (merolhack)',

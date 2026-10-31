@@ -100,3 +100,21 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
     - Se incorporó la verificación de Google Search Console vía meta-tag y archivo estático `web/public/google7d4ec8c5344a17de.html`.
     - Se añadió pie de página oficial con enlaces a `https://merolhack.github.io/` (El Autor) y `https://freelancemexico.com.mx/` (Proyecto Principal).
     - Suite BDD ampliada a 7 escenarios con cobertura para los enlaces del footer.
+
+### [2026-10-31] — Configuración y Vinculación de Propiedades SEO y Telemetría Multi-Plataforma
+- **Consolidación de Propiedades y Verificación:**
+  - **Google Search Console (GSC):**
+    - Propiedad URL Prefix: `https://merolhack.github.io/sat-fiscal-toolkit/`.
+    - Token oficial: `google7d4ec8c5344a17de`.
+    - Verificación doble activa: archivo estático `google7d4ec8c5344a17de.html` (HTTP/2 200 en producción) y meta-tag en `<head>`.
+  - **Bing Webmaster Tools:**
+    - Identificador de usuario / perfil: `tid=39ae6463-c3a9-44a5-a413-752977ed4d3d`.
+    - Token de verificación: `856757614FFC2C5582FBCB81B1B4E4CA`.
+    - Implementación de `BingSiteAuth.xml` en `web/public/BingSiteAuth.xml` y meta-tag `msvalidate.01` en `layout.tsx`.
+  - **Google Analytics 4 (GA4):**
+    - Cuenta `a389930119`, propiedad base `p560646502` / ID de medición unificado `G-8STYZ8GZRJ`.
+  - **Archivos de Indexación SEO:**
+    - Generación de `web/public/robots.txt` permitiendo rastreo e indicando el sitemap.
+    - Generación de `web/public/sitemap.xml` para indexación de la URL canónica.
+  - **Documentación en LLM Wiki:**
+    - Creación del módulo temático independiente `wiki/09_telemetry_and_indexing.md` y actualización del índice general `wiki/00_index.md`.

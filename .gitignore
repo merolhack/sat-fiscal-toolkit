@@ -5,6 +5,7 @@
 # 1. ARCHIVOS CONFIDENCIALES DE FACTURACIÓN Y CFDI
 # Previene la subida de facturas reales, complementos y papeles de trabajo
 *.xml
+!web/public/*.xml
 *.XML
 *.pdf
 *.PDF

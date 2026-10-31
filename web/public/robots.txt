@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://merolhack.github.io/sat-fiscal-toolkit/sitemap.xml
