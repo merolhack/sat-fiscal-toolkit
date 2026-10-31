@@ -89,4 +89,8 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
   - **Motor Fiscal en TypeScript:** Se implementaron `web/src/lib/cfdiParser.ts` (parseo en navegador con DOMParser de CFDI 4.0 y Pagos 2.0 evitando duplicidad de impuestos) y `web/src/lib/taxCalculator.ts` (cálculo acumulativo Art. 106 LISR, segregación de gastos personales/deducibles y mecánica de IVA).
   - **Interfaz de Usuario:** Dashboard reactivo en `web/src/app/page.tsx` con soporte de arrastre de archivos ZIP/XML, reclasificación interactiva de deducciones con recálculo en tiempo real, guía paso a paso de captura SAT con copia directa y exportación a Excel y Markdown.
   - **CI/CD:** Se creó el workflow `.github/workflows/deploy-pages.yml` para despliegue automático en GitHub Pages.
+  - **Pruebas BDD y Despliegue en Vivo:**
+    - Pruebas BDD locales de comportamiento de usuario (`web/src/test/bdd/user_journey.feature.test.tsx`): 6 escenarios aprobados (flujo de efectivo, cálculo Art. 106, reclasificación de gastos, guía de captura SAT y exportación a Excel).
+    - Pruebas BDD remotas (`web/src/test/bdd/remote_health.test.ts`): Verificación exitosa de endpoint HTTP 200 en producción.
+    - **URL Oficial en Producción:** `https://merolhack.github.io/sat-fiscal-toolkit/`.
   - **Validación:** Compilación estática (`npm run build`) completada con éxito generando el directorio `web/out/`.

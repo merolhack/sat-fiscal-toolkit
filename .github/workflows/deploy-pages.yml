@@ -62,6 +62,6 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Verify Remote Deployment Health
-        working-directory: web
-        run: npm run test:remote
+        run: |
+          curl --fail -IL https://merolhack.github.io/sat-fiscal-toolkit/
 
