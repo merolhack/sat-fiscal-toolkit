@@ -94,3 +94,4 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
     - Pruebas BDD remotas (`web/src/test/bdd/remote_health.test.ts`): Verificación exitosa de endpoint HTTP 200 en producción.
     - **URL Oficial en Producción:** `https://merolhack.github.io/sat-fiscal-toolkit/`.
   - **Validación:** Compilación estática (`npm run build`) completada con éxito generando el directorio `web/out/`.
+  - **Instrucciones SAT Integradas en UI:** Se agregaron desplegables interactivos en las tarjetas de carga con las rutas exactas paso a paso para descargar facturas Emitidas y Recibidas desde el portal del SAT.

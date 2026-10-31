@@ -17,7 +17,8 @@ import {
   Check, 
   RotateCcw,
   Sparkles,
-  Info
+  Info,
+  ExternalLink
 } from 'lucide-react';
 import { CFDIInvoice, MonthlyTaxSummary } from '../lib/types';
 import { extractCFDIsFromZip, parseMultipleXMLFiles } from '../lib/zipExtractor';
@@ -242,6 +243,33 @@ export default function Home() {
                 className="hidden"
               />
             </label>
+
+            {/* Guía de descarga SAT */}
+            <div className="mt-4 pt-3 border-t border-slate-100">
+              <details className="text-xs text-slate-600 group">
+                <summary className="cursor-pointer font-semibold text-blue-600 hover:text-blue-800 flex items-center justify-between">
+                  <span className="flex items-center space-x-1.5">
+                    <Info className="h-3.5 w-3.5" />
+                    <span>¿Cómo obtener los XMLs Emitidos en el SAT?</span>
+                  </span>
+                  <span className="text-[10px] text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="mt-2.5 space-y-1.5 pl-2 border-l-2 border-blue-200 text-slate-600">
+                  <p>
+                    1. Entra al <a href="https://portalcfdi.facturaelectronica.sat.gob.mx/" target="_blank" rel="noreferrer" className="text-blue-600 font-medium underline inline-flex items-center">Portal de Factura SAT <ExternalLink className="h-3 w-3 ml-0.5" /></a> con tu Contraseña o e.firma.
+                  </p>
+                  <p>
+                    2. En el menú principal, haz clic en <strong>"Consultar Facturas Emitidas"</strong>.
+                  </p>
+                  <p>
+                    3. Define el rango de fechas con la <strong>Fecha Inicial</strong> y <strong>Fecha Final</strong> del mes correspondiente ({monthNames[month - 1]} {year}) y selecciona Estado: <strong>"Vigente"</strong>.
+                  </p>
+                  <p>
+                    4. Pulsa <strong>"Buscar CFDI"</strong>. Puedes descargar los archivos <code>.xml</code> individuales usando el icono de la nube, o marcar las casillas y pulsar <strong>"Descargar Seleccionados"</strong> para obtener el archivo <code>.zip</code>.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
 
           {/* Card: Facturas Recibidas */}
@@ -270,6 +298,33 @@ export default function Home() {
                 className="hidden"
               />
             </label>
+
+            {/* Guía de descarga SAT */}
+            <div className="mt-4 pt-3 border-t border-slate-100">
+              <details className="text-xs text-slate-600 group">
+                <summary className="cursor-pointer font-semibold text-emerald-600 hover:text-emerald-800 flex items-center justify-between">
+                  <span className="flex items-center space-x-1.5">
+                    <Info className="h-3.5 w-3.5" />
+                    <span>¿Cómo obtener los XMLs Recibidos en el SAT?</span>
+                  </span>
+                  <span className="text-[10px] text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="mt-2.5 space-y-1.5 pl-2 border-l-2 border-emerald-200 text-slate-600">
+                  <p>
+                    1. Entra al <a href="https://portalcfdi.facturaelectronica.sat.gob.mx/" target="_blank" rel="noreferrer" className="text-emerald-600 font-medium underline inline-flex items-center">Portal de Factura SAT <ExternalLink className="h-3 w-3 ml-0.5" /></a> con tu Contraseña o e.firma.
+                  </p>
+                  <p>
+                    2. En el menú principal, haz clic en <strong>"Consultar Facturas Recibidas"</strong>.
+                  </p>
+                  <p>
+                    3. Selecciona la opción <strong>"Fecha de Emisión"</strong> e ingresa el Año ({year}) y Mes ({monthNames[month - 1]}), con Estado del Comprobante: <strong>"Vigente"</strong>.
+                  </p>
+                  <p>
+                    4. Pulsa <strong>"Buscar CFDI"</strong>, marca los comprobantes deseados y haz clic en <strong>"Descargar Seleccionados"</strong>. El portal generará un Folio de Descarga que podrás bajar en formato <code>.zip</code> dentro de la pestaña <strong>"Recuperar descargas de CFDI"</strong>.
+                  </p>
+                </div>
+              </details>
+            </div>
           </div>
         </div>
 
