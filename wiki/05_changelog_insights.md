@@ -127,3 +127,4 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
   - **Puente Centralizado de Sesión:** Creación de `C:\Users\lenin\.gemini\config\chrome_devtools_bridge.mjs` que resuelve dinámicamente el puerto y el GUID activo desde `DevToolsActivePort`.
   - **Configuración Global MCP:** Actualización de `mcp_config.json` para ejecutar el puente dinámico persistente, garantizando que Chrome pida autorización una sola vez al inicio de la sesión.
   - **Regla Global de Antigravity IDE:** Establecimiento de la directiva mandatoria `browser_cdp_persistent_bridge.md` en `C:\Users\lenin\.gemini\config\rules\` que prohíbe terminantemente la creación de conexiones efímeras en cualquier proyecto donde se interactúe con el navegador.
+  - **Plantilla de Prompt Universal:** Generación e integración en `wiki/09_telemetry_and_indexing.md` del prompt estandarizado para iniciar sesiones de navegación seguras y persistentes en cualquier repositorio.

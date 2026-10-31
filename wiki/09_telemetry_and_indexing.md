@@ -115,3 +115,19 @@ En el pie de página (`web/src/app/page.tsx`), se implementaron accesos y recono
 - **El Proyecto Principal:** `https://freelancemexico.com.mx/` (FreelanceMexico)
 - **Repositorio Oficial:** `https://github.com/merolhack/sat-fiscal-toolkit`
 
+---
+
+## 📋 6. Plantilla de Prompt Universal para Navegador en Antigravity IDE
+
+Para interactuar con el navegador web desde cualquier otro proyecto dentro de Antigravity IDE reutilizando la conexión persistente (Opción A):
+
+```markdown
+Por favor interactúa con el navegador web para realizar la siguiente tarea:
+[Describir la tarea específica: e.g., inspeccionar Search Console, verificar Analytics, probar login o auditoría visual].
+
+Reglas técnicas obligatorias para el navegador:
+1. Utiliza exclusivamente las herramientas del servidor MCP "chrome-devtools" (como list_pages, navigate_page, click, type_text, evaluate_script, take_snapshot o take_screenshot).
+2. NO generes scripts auxiliares efímeros de Node.js o PowerShell que abran sockets WebSocket manuales (new WebSocket) contra el puerto 9222, ya que esto dispara alertas modales repetitivas de depuración en Chrome.
+3. El servidor MCP "chrome-devtools" ya está configurado globalmente en Antigravity IDE con el puente dinámico ("chrome_devtools_bridge.mjs"), el cual mantiene una única conexión persistente autorizada durante toda la sesión.
+```
+
