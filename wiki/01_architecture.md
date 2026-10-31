@@ -38,3 +38,22 @@ flowchart LR
      - Determinación ISR
      - Determinación IVA
    - Resúmenes ejecutivos en Markdown optimizados para auditoría rápida con LLMs (NotebookLM, Gemini).
+
+---
+
+## 🌐 Aplicación Web Client-Side (`web/`) — GitHub Pages
+
+Para usuarios interactivos y auditoría en navegador con privacidad absoluta:
+
+```mermaid
+flowchart LR
+    A["Navegador: Drag & Drop (ZIP / XML)"] --> B["JSZip + DOMParser (web/src/lib/cfdiParser.ts)"]
+    B --> C["Motor Fiscal TypeScript (web/src/lib/taxCalculator.ts)"]
+    C --> D["Dashboard React + Next.js (App Router)"]
+    D --> E["Exportación Excel (SheetJS) y Markdown"]
+    D --> F["Persistencia Local (LocalStorage / IndexedDB)"]
+```
+
+- **Framework:** Next.js (Static Export `output: 'export'`) alojado en GitHub Pages.
+- **Seguridad y Privacidad:** Procesamiento 100% *Local-First* en el navegador del cliente. Ninguna factura ni dato fiscal viaja por internet.
+- **Despliegue Continuo:** GitHub Actions vía `.github/workflows/deploy-pages.yml` compilando `web/` hacia `web/out/`.

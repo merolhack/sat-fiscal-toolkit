@@ -74,3 +74,19 @@ Registro cronológico de decisiones arquitectónicas, aprendizajes técnicos y r
   - Retenciones de ISR acumuladas base: **$8,623.00 MXN** (Remanente: $8,365.00 MXN).
   - Pagos provisionales de ISR acumulados base: **$592.00 MXN**.
   - Saldo a Favor de IVA acumulado disponible para acreditar: **$5,900.00 MXN** ($5,326.00 + $574.00).
+
+### [2026-10-31] — Evaluación Arquitectónica: Portabilidad Web a GitHub Pages (Next.js Estático) y Opciones de Backend
+- **Contexto:** Evaluación para transformar el toolkit CLI/Python en una interfaz web interactiva alojada en GitHub Pages con Next.js.
+- **Reto Clave:** GitHub Pages no admite backend en ejecución (solo archivos estáticos `out/`) y las facturas fiscales (CFDI 4.0) exigen estricta privacidad de datos sensibles (RFC, importes, sellos).
+- **Ruta Estratégica Determinada:**
+  1. **Arquitectura Recomendada (Client-Side / Local-First):** Frontend Next.js estático (`output: 'export'`) procesando XMLs directamente en el navegador del cliente mediante JS/TS (con `DOMParser`/`JSZip`) o WebAssembly (Pyodide). Garantiza 100% de privacidad (los XMLs nunca viajan por internet) y costo operativo cero permanente sin depender de cold starts.
+  2. **Arquitectura Alternativa (Decoupled Backend Gratuito):** API FastAPI en Python montada en Hugging Face Spaces (sin spin-down agresivo) o Render Free Web Service (con mitigación de cold start de 50s) consumida por el frontend en GitHub Pages con CORS habilitado.
+  3. **Persistencia Local:** Uso de IndexedDB en el navegador para mantener el historial acumulado de meses anteriores (arrastre de saldos ISR e IVA).
+
+### [2026-10-31] — Implementación de la Aplicación Web Estática Client-Side (`web/`)
+- **Implementación Exitosa:**
+  - Se estructuró la aplicación en `web/` con Next.js (App Router), TypeScript, Tailwind CSS, JSZip y SheetJS (`xlsx`).
+  - **Motor Fiscal en TypeScript:** Se implementaron `web/src/lib/cfdiParser.ts` (parseo en navegador con DOMParser de CFDI 4.0 y Pagos 2.0 evitando duplicidad de impuestos) y `web/src/lib/taxCalculator.ts` (cálculo acumulativo Art. 106 LISR, segregación de gastos personales/deducibles y mecánica de IVA).
+  - **Interfaz de Usuario:** Dashboard reactivo en `web/src/app/page.tsx` con soporte de arrastre de archivos ZIP/XML, reclasificación interactiva de deducciones con recálculo en tiempo real, guía paso a paso de captura SAT con copia directa y exportación a Excel y Markdown.
+  - **CI/CD:** Se creó el workflow `.github/workflows/deploy-pages.yml` para despliegue automático en GitHub Pages.
+  - **Validación:** Compilación estática (`npm run build`) completada con éxito generando el directorio `web/out/`.

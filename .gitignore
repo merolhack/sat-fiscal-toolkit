@@ -112,3 +112,19 @@ pip-log.txt
 *.bak
 *Zone.Identifier*
 *:Zone.Identifier
+
+# 10. NODE.JS & NEXT.JS WEB CLIENT
+web/node_modules/
+web/.next/
+web/out/
+web/.turbo/
+.npm
+
+# Permitir configuración y código fuente web
+!web/package.json
+!web/package-lock.json
+!web/tsconfig.json
+!web/src/lib/
+!web/src/lib/**
+
+
